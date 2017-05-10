@@ -28,6 +28,6 @@ reader.on('data', function(buf) {
 
   // record card number (ignore 0 & enter)
   if (code !== 0 && code !== 40) {
-    cache += code-29;
+    cache += (code-29) % 10;
   }
 })
