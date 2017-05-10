@@ -16,10 +16,13 @@ reader.on('data', function(buf) {
 
   // verify card number when 'enter'
   if (code === 40) {
-    if (cache == ENV.ID) {
-      rp.post({url: `${ENV.LOCK_SERVER}/switch`}, function(err, res, body){
-        console.log(body);
-      });
+    for (let id of ENV.IDS) {
+      if (cache === id) {
+        rp.post({url: `${ENV.LOCK_SERVER}/switch`}, function(err, res, body){
+          console.log(body);
+        });
+        break;
+      }
     }
 
     // clear card number buffer
