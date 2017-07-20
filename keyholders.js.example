@@ -1,0 +1,16 @@
+const keyholders = [
+    {
+	"name": "",
+	"phone": "",
+	"email": "",
+	"telegram": "",
+	"cards": [
+	    {
+		"id": "",
+		"title": ""
+ 	    }
+	]
+    }
+];
+
+module.exports = keyholders;
