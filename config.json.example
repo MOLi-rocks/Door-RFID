@@ -5,6 +5,6 @@
     '0123456789'
   ],
   SERCERT_KEY: '',
-  "rdb_dbname": "moli_keyholder",
+  "rdb_dbname": "moli",
   "rdb_hostname": "localhost"
 }
