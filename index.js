@@ -4,6 +4,7 @@ const config = require(appRoot + "/config.json");
 var SerialPort = require('serialport');
 var rp = require('request');
 const keyholders = require('./keyholders.js');
+var keyholder = require(appRoot + "/model/keyholder.js")(config);
 
 // set RFID reader
 var reader = new SerialPort(config.SERIAL_PORT, {

@@ -4,5 +4,7 @@
   IDS: [
     '0123456789'
   ],
-  SERCERT_KEY: ''
+  SERCERT_KEY: '',
+  "rdb_dbname": "moli_keyholder",
+  "rdb_hostname": "localhost"
 }
