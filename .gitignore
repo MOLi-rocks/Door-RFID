@@ -1,5 +1,6 @@
 env.js
 keyholders.js
+config.json
 node_modules/
 
 .vscode/

@@ -1,10 +1,8 @@
-const ENV = {
+{
   SERIAL_PORT: '/dev/xxx',
   LOCK_SERVER: 'http://localhost:1234',
   IDS: [
     '0123456789'
   ],
   SERCERT_KEY: ''
-};
-
-module.exports = ENV;
+}

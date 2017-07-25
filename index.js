@@ -1,10 +1,12 @@
+var appRoot = require('app-root-path');
+const config = require(appRoot + "/config.json");
+
 var SerialPort = require('serialport');
 var rp = require('request');
-const ENV = require('./env.js');
 const keyholders = require('./keyholders.js');
 
 // set RFID reader
-var reader = new SerialPort(ENV.SERIAL_PORT, {
+var reader = new SerialPort(config.SERIAL_PORT, {
   baudRate: 57600
 });
 
@@ -22,9 +24,9 @@ reader.on('data', function(buf) {
         for (let card of keyholder.cards) {
             if (card.id === cache) {
                 rp.post({
-                    url: `${ENV.LOCK_SERVER}/switch`,
+                    url: config.LOCK_SERVER + '/switch',
                     form: {
-                        token: ENV.TOKEN,
+                        token: config.TOKEN,
 			message: formatMessage(keyholder, card.title)
                     }
                 }, function (err, res, body) {
