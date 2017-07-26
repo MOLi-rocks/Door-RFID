@@ -1,5 +1,5 @@
 var SerialPort = require('serialport');
-var rp = require('request');
+var rq = require('request');
 const ENV = require('./env.js');
 const keyholders = require('./keyholders.js');
 
@@ -16,25 +16,19 @@ reader.on('data', function(buf) {
   var code = buf.readUIntLE(2);
 
   // verify card number when 'enter'
-  let stop = false;
   if (code === 40) {
-    for (let keyholder of keyholders) {
-        for (let card of keyholder.cards) {
-            if (card.id === cache) {
-                rp.post({
-                    url: `${ENV.LOCK_SERVER}/switch`,
-                    form: {
-                        token: ENV.TOKEN,
-			message: formatMessage(keyholder, card.title)
-                    }
-                }, function (err, res, body) {
-                    console.log(body);
-                });
-                stop = true;
-                break;
-            }
-        }
-        if (stop) {
+    for (let keyholder of keyholders) {        
+        var card = keyholder.cards[cache];
+        if (card) {
+            rq.post({
+                url: `${ENV.LOCK_SERVER}/switch`,
+                form: {
+                    token: ENV.TOKEN,
+                    message: formatMessage(keyholder, card.title)
+                }
+            }, function (err, res, body) {
+                console.log(body);
+            });
             break;
         }
     }

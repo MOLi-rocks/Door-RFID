@@ -1,16 +1,24 @@
 const keyholders = [
     {
-	"name": "",
-	"phone": "",
-	"email": "",
-	"telegram": "",
-	"cards": [
-	    {
-		"id": "",
-		"title": ""
- 	    }
-	]
+		"name": "",
+		"phone": "",
+		"email": "",
+		"telegram": "",
+		"cards": {
+			"bb": "BB卡",
+			"cc": "CC卡",
+			"dd": "DD卡"
+		}
     }
 ];
 
 module.exports = keyholders;
+
+var rfid = ff;
+
+for (keyholder of keyholders) {
+	var card = keyholder.cards[rfid];
+	if (card) {
+		r
+	}
+}
