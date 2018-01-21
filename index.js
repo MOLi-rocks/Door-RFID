@@ -24,7 +24,7 @@ reader.on('data', function(buf) {
                 url: `${ENV.LOCK_SERVER}/switch`,
                 form: {
                     token: ENV.TOKEN,
-                    message: formatMessage(keyholder, card.title)
+                    message: formatMessage(keyholder, card)
                 }
             }, function (err, res, body) {
                 console.log(body);
@@ -45,6 +45,7 @@ reader.on('data', function(buf) {
 
 function formatMessage(keyholder, card) {
   console.log(keyholder.telegram);
-  let message = `${keyholder.name} (@${keyholder.telegram}) 用 ${card}`;
+  console.log(card);
+  let message = keyholder.name + ' (@' + keyholder.telegram + ') 用 '+ card;
   return message;
 }
