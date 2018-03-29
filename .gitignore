@@ -1,6 +1,6 @@
-env.js
-keyholders.js
-node_modules/
+env.json
+keyholders.json
+doorrfid/
 
 .vscode/
 .idea/

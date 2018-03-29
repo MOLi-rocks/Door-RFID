@@ -1,0 +1,13 @@
+[
+    {
+        "name": "",
+        "phone": "",
+        "email": "",
+        "telegram": "",
+        "cards": {
+            "bb": "BB卡",
+            "cc": "CC卡",
+            "dd": "DD卡"
+        }
+    }
+]
