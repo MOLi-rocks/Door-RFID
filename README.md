@@ -8,6 +8,11 @@
 pip3 install -r requirements.txt
 ```
 
+- set virtual environment
+```
+virtualenv env
+```
+
 - open virtual environment
 ```
 source doorrifd/bin/activate
