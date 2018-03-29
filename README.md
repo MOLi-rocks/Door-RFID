@@ -10,7 +10,7 @@ pip3 install -r requirements.txt
 
 - set virtual environment
 ```
-virtualenv env
+virtualenv doorrfid
 ```
 
 - open virtual environment
