@@ -37,3 +37,8 @@ python3 index.py
 ```
 deactivate
 ```
+
+- run in background using pm2
+```
+sudo pm2 start index.py interpreter=python3
+```
