@@ -4,6 +4,7 @@ import usb.core
 import usb.util
 import json
 import requests
+import RPi.GPIO as GPIO
 from pprint import pprint
 
 # read env and keyholders
@@ -72,10 +73,18 @@ def init():
     #print('test')
     endpoint = reader[0][(0,0)][0]
 
+# init GPIO
+def initGPIO():
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(int(ENV['LED_PIN']), GPIO.OUT)
+
+
 init()
+initGPIO()
 
 while True:
     try:
+        GPIO.output(int(ENV['LED_PIN']), GPIO.HIGH)
         cardID = ''
         data = ''
         while data is not 40:
@@ -94,6 +103,7 @@ while True:
                 }
             )
             print(response.text)
+        GPIO.output(int(ENV['LED_PIN']), GPIO.LOW)
     except usb.core.USBError as e:
         cardID = ''
         data = ''
@@ -101,4 +111,6 @@ while True:
         if e.errno is 19:
             init()
         continue
+    finally:
+        GPIO.cleanup()
 
