@@ -40,5 +40,5 @@ deactivate
 
 - run in background using pm2
 ```
-sudo pm2 start index.py interpreter=python3
+sudo pm2 start index.py --interpreter=python3
 ```
