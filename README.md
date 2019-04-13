@@ -1,44 +1,34 @@
 # Door-RFID
-用 python3 RFID 一下
+用 Python RFID 一下
+
+## Version
+Python 3
 
 ## Instructions
 
-- install packages
-```
-pip3 install -r requirements.txt
-```
+```script=
+# 1. Setup Virtual Environment
+$ virtualenv -p python3 env
 
-- set virtual environment
-```
-virtualenv doorrfid
-```
+# 2. Activate Virtual Environment
+$ source env/bin/activate
 
-- open virtual environment
-```
-source doorrifd/bin/activate
-```
+# 3. Install Project Packages
+$ pip install -r requirements.txt
 
-- pip3 install packages
-```
-pip3 install xxxxx
-```
+# 4. Start
+$ python index.py
 
-- pip3 save packages
+# 5. Deactitvate
+$ deactivate
 ```
-pip3 freeze > requirements.txt
-```
+## Note
 
-- run program
+- pip save packages
 ```
-python3 index.py
+$ pip freeze > requirements.txt
 ```
-
-- close virtual environment
+- Run with PM2
 ```
-deactivate
-```
-
-- run in background using pm2
-```
-sudo pm2 start index.py --interpreter=python3
+$ sudo pm2 start index.py --interpreter=python3
 ```
